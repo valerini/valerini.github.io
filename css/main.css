@@ -1,0 +1,166 @@
+body {
+    margin: 20px;
+    width: 85%;
+    padding-top: 4em;
+    display: block;
+}
+
+.container {
+    width: 950px;
+    margin: 0px auto;
+}
+
+div.footer {
+    margin-top: 50px;
+    height: 50px;
+}
+
+h2.professional, h2.talks{
+    padding-top: 20px;
+}
+
+div {
+    display: block;
+}
+
+.nav-panel {
+    width: 250px;
+    float: left;
+    border-right: 3px solid #b88b58;
+}
+
+.name {
+    border-bottom: 1px solid #999;
+}
+
+.navigation {
+    border-bottom: 1px solid #999;
+}
+
+.content {
+    width: 600px;
+    float: left;
+    padding-left: 4em;
+    color: #333;
+}
+
+.myphoto {
+    width: 30%;
+    float: right;
+    padding-left: 2em;
+}
+
+img#ava {
+    width: 100%;
+    float: right;	       
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.4em;
+}
+
+.authors, .venue {
+    padding-left: 1em;
+}
+
+.paper {
+    padding-bottom: 20px;
+}
+
+div.time_slot {
+    float:left;
+}
+div.place {
+    float:right;
+}
+div.entry {
+    width: 100%;
+}
+
+table.education {
+    width: 100%;
+}
+table.education tr td {
+    width: 10px;
+    vertical-align: text-top;
+}
+table.education tr td {
+    padding-bottom: 10px;
+}
+
+div.details {
+    color: #999;
+    padding-left: 10px;
+    font-size: 0.9em;
+}
+
+table.journeys tr td.time_slot {
+    padding-right: 25px;
+    vertical-align: text-top;
+    
+}
+
+div.zoom {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+div.zoom a img {
+    width: 300px;
+}
+
+table.journeys tr td {
+    padding-bottom: 10px;
+}
+
+
+
+
+
+
+nav ul, footer ul {
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    padding: 0px;
+    list-style: none;
+    font-weight: bold;
+}
+nav ul li, footer ul li {
+    display: inline;
+    margin-right: 20px;
+}
+a {
+    text-decoration: underline;
+    color: #999;
+}
+a:hover {
+    text-decoration: underline;
+    color:#b88b58;
+}
+body {
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+}
+h1 {
+    font-size: 2em;
+}
+h2, .contact strong.email {
+    font-size: 1.3em;
+}
+
+div.contact {
+    padding-top: 20px;
+}
+    
+footer {
+    border-top: 1px solid #d5d5d5;
+    font-size: .8em;
+}
+
+ul.posts { 
+    margin: 20px auto 40px; 
+    font-size: 1.5em;
+}
+
+ul.posts li {
+    list-style: none;
+}
