@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/valeniko
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.valeniko.com
+  * I am valeniko (https://keybase.io/valeniko) on keybase.
+  * I have a public key with fingerprint 936B 4DDA 1781 8804 94F7  E43A EDB3 8A3D 962D B784
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101ca72d0133e30b203d6d1aeb0c04169789ddeb6759678002d204a1f2210913e770a",
+      "fingerprint": "936b4dda1781880494f7e43aedb38a3d962db784",
+      "host": "keybase.io",
+      "key_id": "edb38a3d962db784",
+      "kid": "0101ca72d0133e30b203d6d1aeb0c04169789ddeb6759678002d204a1f2210913e770a",
+      "uid": "1d8c7b61260526518004741e024ca019",
+      "username": "valeniko"
+    },
+    "service": {
+      "hostname": "www.valeniko.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1537267606,
+  "expire_in": 157680000,
+  "prev": "5cf717ee95c6a7b3d8c00a944a006530274d0f88d5204d641403c09e146cccd8",
+  "seqno": 2,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Comment: GPGTools - https://gpgtools.org
+
+owGtkm1QVFUYx5dlqVxfIHMAPwBynWpAoHNf9r5s4WgkNkxYU9sskbDce88BLix7
+t90FlkGkcAdQA3Uhy0ENEEICSnqD0QgsEMUZGpkcRhcHKWCGiBHjzZCsu4x862Of
+zpzn/P7/83+eeY5v9FVpfWa+PhJ7MrrD5XN9SlC9WztcV4gJMizA9IVYNlo9kBki
+u8OULUFMjwEc4CLPEBDgJIlIIBCAhDTEeSQAEVA4zTEsByESaEbH0QwLAAEJQPF4
+OkHggMNJxDCAx6KwdMmSgWxWm2RxKLYcSQsUhDzOsDjLAoqj0hlEkTyCAsnyJORo
+AgoMSynCTNnuVSjhBN6OYiRZqSkX02q8/+D/59y5q3Y4ZEVGoHGCBjqC1uEKTzEU
+jgBBiTzAOS9oRzYLn4MUOo83I4uULWNFUZhSzZNE5B2st5PHRH5+fswaFSPKOYre
+apMdsiiblddMh8Nq13vVjgLrKo4E02MjkyBZoDJLRZGHbHZJtmB6XCFFh+R1xnUk
+Q9AMDegoDDmtkg2ZJC+hY2glMwDef1CeYqkT0/czOIMQpxNpnhFIpUMAeI6ieABo
+HQkIhoIgnWWhTpkLpCmcAqQIOIRTtCiKkMW8vb1nkTE9oeTkMxRPu5Rh4R25NoQV
+aQ+rSY3KR6sKCQzXVGUn3g76oFxTvTSuX9s/P7V3+VTadQFrlfxh/3/sO/1qxk6P
+3OnO6fntUeRCX7szIfEQqGz1qU+d26O6arhobfl1sibw92vNk8EFyduTjJmxas3W
+8k0ed+/TVb8YXgJnOxsmituq+/kn0m670YdLs359ne0JXxb0iuu5yVuxFccuHJh7
+dH3xYMV81pmUuyvPLKeUGD8XDa6qSoevvqFno2sd8dCZPD+kBm8cm38flSbMFq98
+M3Kw4UrcbkMYP9g+fO/TUSoanK+ttZTQ05dcGzK2fUz/ZarD4os+ark8Per/7Ntv
+hpiDY8GE50wS+7o7LmGxbSBZo3Wrd9xcCEm9lPDJdIwnbeC7B6dns+5t2fJ9WFK9
+fW8lNXPqp353zzn3RWeF3HcgOCxiYmriXCpbePxEV7zTdvVwaxPRtPj3/MypmafK
+v+jIvdmhKd1kCDwxeRa09O4I2/eaUVXafG139eW5F32f+zM/SKbGNqnLGrvUR0yH
+yuybL+xPOjrg7xvuMmqnPIN1mWaPfH/v8/zJ2YgQV/HPCyPD5qb2Ow8au7896h8w
+3rVtOXrX3J6SzjZiaCFDk7Nk1iCzM+gtv/Dp0Vez413m2s1bQ/Mi26OGXk7Zt/yZ
+nq1af0sjRV8xplXkZKk3ZEUMGv2tNwxT93N/IOD5XS98VZ3yTnfzj9CaOF5Z/+QN
+0Opp/CPulZqygujOpp39DyvGAiJDkyO3r1T5pobe/Rc=
+=1Rk2
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/valeniko
+
+==================================================================
