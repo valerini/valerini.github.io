@@ -164,3 +164,7 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
+
+ul.mylist li {
+    padding-bottom: 10px;
+}
