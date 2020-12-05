@@ -137,6 +137,14 @@ a:hover {
     text-decoration: underline;
     color:#b88b58;
 }
+a.paper {
+    text-decoration: underline;
+    color: #b88b58;
+}
+a.paper:hover {
+    text-decoration: underline;
+    color: #555;
+}
 body {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
