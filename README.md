@@ -1,7 +1,7 @@
-> gem install github-pages --user-install
+> bundle install
 
-For required gems:
-> gem install rexml --user-install
-
+then:
+> bundle exec jekyll serve
+or
 > jekyll build
 > jekyll serve

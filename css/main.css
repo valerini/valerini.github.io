@@ -176,3 +176,11 @@ ul.posts li {
 ul.mylist li {
     padding-bottom: 10px;
 }
+
+.post_image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
