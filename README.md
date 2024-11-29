@@ -1,3 +1,6 @@
+might need:
+> bundle update github-pages
+
 > bundle install
 
 then:
