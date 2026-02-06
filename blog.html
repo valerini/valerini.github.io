@@ -1,0 +1,21 @@
+---
+layout: default
+title: Valeria Nikolaenko
+---
+
+<h2>Thoughts on Cryptography and Other Topics</h2>
+
+<style>
+  .large-spacing li {
+      margin-bottom: 1em; /* Adjust the value as needed (e.g., 15px, 1.5em) */
+      font-size:1.3em;
+  }
+</style>
+
+<ul class="large-spacing">
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a> &nbsp;({{ post.date | date: "%b, %Y" }})
+    </li>
+  {% endfor %}
+</ul>
