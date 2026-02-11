@@ -253,7 +253,7 @@ div.footer {
     padding: 20px 30px; /* Adjust padding for desired menu height and spacing */
     text-decoration: none; /* Remove underlines from links */
     transition: background-color 0.3s; /* Smooth transition for hover effect */
-    font-size: 1.2em;
+    font-size: 1.2rem;
 }
 
 .navbar li a:hover {
