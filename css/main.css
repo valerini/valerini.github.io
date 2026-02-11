@@ -1,6 +1,5 @@
 body {
     margin: 20px;
-    width: 85%;
     padding-top: 4em;
     display: block;
 }
@@ -37,6 +36,13 @@ div {
     float: left;
     padding-left: 4em;
     color: #333;
+}
+
+.content_post {
+    max-width: 728px;
+    margin: 0 auto;
+    color: #333;
+    padding: 0 1rem;
 }
 
 .myphoto {
@@ -218,4 +224,36 @@ div.footer {
     display: block;
     text-align: center;
     color: #7d7d7d;
+}
+
+.navbar {
+    background-color: #333; /* Dark background color */
+    color: white;
+    position: fixed; /* Fix the navbar to the viewport */
+    top: 0; /* Position it at the top of the viewport */
+    left: 0; /* Ensure it starts from the left edge */
+    width: 100%; /* Ensure it spans the full width of the viewport */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: center; /* Center the menu items within the navbar */
+}
+
+.navbar li a {
+    display: block; /* Make the links fill the list item space */
+    color: white;
+    text-align: center;
+    padding: 20px 30px; /* Adjust padding for desired menu height and spacing */
+    text-decoration: none; /* Remove underlines from links */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.navbar li a:hover {
+    background-color: #575757; /* Change background on hover */
 }

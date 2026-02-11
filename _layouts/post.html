@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async
+    src="https://www.googletagmanager.com/gtag/js?id=UA-20116102-6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []; function
+      gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+
+      gtag('config', 'UA-20116102-6');
+    </script>
+
+    <title>{{ page.title }}</title> <!-- link to main stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul style="list-style: none; display: flex; gap: 1rem; align-items: center; padding: 0;">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/blog.html">Posts</a></li>
+      </ul>
+    </nav>
+
+    <div class="content_post">      
+      {{ content }}
+
+      <div class="footer"> &copy; Valeria Nikolaenko. Originally published on www.valerini.com
+      </div>
+    </div>
+  </body>
+</html>
