@@ -1,10 +1,9 @@
 ---
 layout: post
 title: Hashing in Merkle Trees
+description: "Review of different hash functions: history, properties, constructions, performance"
+image: /images/Rust_Hash_Benches.png
 ---
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://valerini.com/images/Rust_Hash_Benches.png">
 
 # Hashing in Merkle Trees
 <span style="color:lightgray">{{ page.date | date: "%B, %Y" }}</span>

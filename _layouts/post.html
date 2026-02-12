@@ -15,6 +15,23 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <link rel="shortcut icon" href="/images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="{{ page.description | default: site.description }}">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:image" content="{{ page.image | absolute_url }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+    <meta name="twitter:image" content="{{ page.image | absolute_url }}">
+    <meta name="twitter:site" content="@{{ site.twitter_username }}">
+
   </head>
   <body>
     <nav class="navbar">
