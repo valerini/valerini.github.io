@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hashing in Merkle Trees
-description: "Review of different hash functions: history, properties, constructions, performance"
+description: "Review of different hash functions: history, properties, constructions, performance."
 image: /images/Rust_Hash_Benches.png
 ---
 
@@ -37,7 +37,7 @@ target collision resistance ([TCR](https://eprint.iacr.org/1997/009)), enhanced 
 
 Current NIST standards for hashing (see [NIST-FIPS-202](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf)):
 
-![Security Strength of SHA-1, SHA-2 and SHA-3](/images/SHA_strengths_FIPS_202.png){:width="500"}
+![Security Strength of SHA-1, SHA-2 and SHA-3](/images/SHA_strengths_FIPS_202.png){: style="max-width:500px; width:100%; height:auto;" }
 
 ## SHA-2
 
@@ -45,7 +45,7 @@ SHA-2 ([FIPS 180-4](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf))
 
 SHA-2 uses the Merkle-Damgard paradigm with Davies-Meyer's compression function, for a block-cipher E it works as follows:
 
-![Merkle Damgard Construction](/images/Merkle_Damgard_construction.png){:width="500"}
+![Merkle Damgard Construction](/images/Merkle_Damgard_construction.png){: style="max-width:650px; width:100%; height:auto;" }
 
 The block cipher E used for SHA-2 is NIST-designed SHACAL-2 cipher running the round function on a 64B block with different pre-specified round keys: 64 rounds for SHA2-256 and 80 rounds for SHA2-512.
 [Attack on SHA2-512/256 (2016)](https://eprint.iacr.org/2016/374.pdf) found collision for 43 rounds (out of 80). [Attack on SHA2-256 (2011)](https://eprint.iacr.org/2011/037.pdf) found collision for 46 rounds (out of 64). No attack are known on full SHA2 other than the trivial birthday-bound.
@@ -65,7 +65,7 @@ SHA-3 ([FIPS 202](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf)) was
 
 While there is nothing wrong with SHA-2 (as of today), SHA-3 got standardised to diversify the crypto-toolkit as new attacks were being discovered for SHA-1 which shares similar designs with SHA-2. So, in the event one of the functions get broken, we have another one to substitute with (though it has [its own controversies](https://www.imperialviolet.org/2017/05/31/skipsha3.html)).
 
-![SHA3 Sponge Construction](/images/SHA3_SpongeConstruction.png){:width="500"}
+![SHA3 Sponge Construction](/images/SHA3_SpongeConstruction.png){: style="max-width:650px; width:100%; height:auto;" }
 <br/><span style="color:lightgray;margin:0;padding:0;"><small>From "A Graduate Course in Applied Cryptography" [version 0.6](https://toc.cryptobook.us/book.pdf) by Dan Boneh and Victor Shoup</small></span>
 
 SHA-3 is a sponge construction. Where the function f is a public premutation called Keccak that maps 1600-bits to 1600-bits. For SHA3-256: c = 512 bits, for SHA3-512: c = 1024 bits. For SHAKE128: c = 256 bits, for SHAKE256: c = 512 bits. The output is r first bits of the last execution of f. The c last bits are not part of the output, giving length-extension resistance in contrast to SHA-2. f includes 24 rounds of iterations: [an attack on SHA-3 (2019)](https://eprint.iacr.org/2019/147.pdf) found a collision on 5 rounds (out of 24); no attacks are known on full SHA3 other than the trivial birthday bound.
@@ -102,7 +102,7 @@ Hashing in a tree-fasion is done to either parallelize hashing, or to make it ea
 
 Under some plausible assumptions, [it was shown](https://eprint.iacr.org/2024/1095.pdf) that to get (n*256)-to-256 collision-resistant function from 512-to-256 collision-resistant function, n-1 calls are required, so Merkle trees and Merkle-Damgard construction (e.g. SHA-2) are in some sense optimal.
 
-![Sequentian vs. Parallel Hashing](/images/Parallel_vs_Sequential_Hashing.png){:width="600"}
+![Sequentian vs. Parallel Hashing](/images/Parallel_vs_Sequential_Hashing.png){: style="max-width:650px; width:100%; height:auto;" }
 
 The trees in accumulators can get rather big, for example:
 
@@ -120,7 +120,7 @@ The red line shows the performance for 512-to-256 compression for constructions 
 
 Here are my benchmarks (or rather attempts) for Rust crates on Apple M3 Pro (2023). Not sure why SHA2 in software is slower than SHA3 in software, possibly because Rust compiler favors safety over performance.
 
-![Rust hashing benchmarks](/images/Rust_Hash_Benches.png){:width="600"}
+![Rust hashing benchmarks](/images/Rust_Hash_Benches.png){: style="max-width:600px; width:100%; height:auto;" }
 
 For performance in Merkle trees, we look at a specific point of these graphs for hashing 64 bytes input. Note the drastic 6x differenece depending on the choice of the function:
 
