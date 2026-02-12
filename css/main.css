@@ -1,6 +1,5 @@
 body {
     margin: 0;    
-    padding-top: 4em;
     display: block;
 
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -10,21 +9,24 @@ body {
 .container {
     max-width: 950px;
     margin: 0px auto;
+    border-top: 1px solid transparent;
+    display: flex;
 }
 
 .content {
     max-width: 560px;
-    float: left;
-    padding-left: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
     color: #333;
     padding-bottom: 4em;
+    margin-top: 40px;
 }
 
 .nav-panel {
     width: 250px;
-    float: left;
     border-right: 3px solid #b88b58;
-    padding-left: 40px;
+    padding-left: 20px;
+    margin-top: 40px;
 }
 
 .content_post {
@@ -32,6 +34,7 @@ body {
     margin: 0 auto;
     color: #333;
     padding: 0 1rem;
+    padding-top: 4em;
 }
 
 h2.professional, h2.talks{
