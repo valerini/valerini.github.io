@@ -15,6 +15,7 @@ body {
 
 .content {
     max-width: 560px;
+    min-width: 420px;
     padding-left: 20px;
     padding-right: 20px;
     color: #333;
@@ -90,8 +91,8 @@ div.entry {
 table.education {
     width: 100%;
 }
-table.education tr td {
-    width: 10px;
+table.education td:first-child  {
+    width: 100px;
     vertical-align: text-top;
 }
 table.education tr td {

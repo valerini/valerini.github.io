@@ -16,8 +16,8 @@ A typical blockchain would use a hash-function in the following common cases:
 * for proof-of-work,
 * for public keys to generate shorter addresses.
 
-Because hash function compress data, collisions are inevitable, but are hard to find.
-In particular, based on the application we require different security properties of a hash-function:
+Because hash function compress data, collisions are inevitable, but are hard to find. For the current standards not a single collision is known and finding two points that produce a collision, even by mere luck, would render the hash function unusable.
+Based on the application we require different security properties of a hash-function:
 * **Pre-image resistance**: given h it is hard to find x, s.t. H(x) = h.
 * **Second preimage resistance**: given x, it is hard to find x', s.t. H(x) = H(x').
 * **Collision resistance**<span style="color:blue">\*</span>: hard to find x1, x2, s.t. H(x1) = H(x2).
@@ -41,7 +41,7 @@ Current NIST standards for hashing (see [NIST-FIPS-202](https://nvlpubs.nist.gov
 
 ## SHA-2
 
-SHA-2 ([FIPS 180-4](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf)) is often called just "SHA": standardised in 2001, mostly used SHA2-256, SHA2-512. SHA2-512/256 which is roughly the same as SHA2-512 truncated to 256 bits is sometimes used in place of SHA2-256 as it is more [speedy](eprint.iacr.org/2010/548) on 64-bits architectures and also resistant against length-extension attacks. Historically SHA-256 and SHA-512 stand for SHA2-256 and SHA2-512 respectively.
+SHA-2 ([FIPS 180-4](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf)) is often called just "SHA": standardised in 2001. Has modes that give 224, 256, 384 or 512-bits output. SHA2-512/256 is SHA2-512 truncated to 256 bits (with a tiny tweak) is sometimes used in place of SHA2-256 as it is  [faster](eprint.iacr.org/2010/548) on 64-bits architectures and also resistant against length-extension attacks.
 
 SHA-2 uses the Merkle-Damgard paradigm with Davies-Meyer's compression function, for a block-cipher E it works as follows:
 
@@ -61,14 +61,12 @@ Bitcoin is using SHA2-256 for the proof-of-work challenges. All of Bitcoin miner
 
 ## SHA-3
 
-SHA-3 ([FIPS 202](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf)) was standardized in 2015. Most popular are SHA3-256, SHA3-512 modes.
-
-While there is nothing wrong with SHA-2 (as of today), SHA-3 got standardised to diversify the crypto-toolkit as new attacks were being discovered for SHA-1 which shares similar designs with SHA-2. So, in the event one of the functions get broken, we have another one to substitute with (though it has [its own controversies](https://www.imperialviolet.org/2017/05/31/skipsha3.html)).
+SHA-3 ([FIPS 202](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf)) was standardized in 2015. While there is nothing wrong with SHA-2 (as of today), SHA-3 got standardised to diversify the crypto-toolkit as new attacks were being discovered for SHA-1 which shares similar designs with SHA-2. So, in the event one of the functions get broken, we have another one to substitute with (though it has [its own controversies](https://www.imperialviolet.org/2017/05/31/skipsha3.html)).
 
 ![SHA3 Sponge Construction](/images/SHA3_SpongeConstruction.png){: style="max-width:650px; width:100%; height:auto;" }
 <br/><span style="color:lightgray;margin:0;padding:0;"><small>From "A Graduate Course in Applied Cryptography" [version 0.6](https://toc.cryptobook.us/book.pdf) by Dan Boneh and Victor Shoup</small></span>
 
-SHA-3 is a sponge construction. Where the function f is a public premutation called Keccak that maps 1600-bits to 1600-bits. For SHA3-256: c = 512 bits, for SHA3-512: c = 1024 bits. For SHAKE128: c = 256 bits, for SHAKE256: c = 512 bits. The output is r first bits of the last execution of f. The c last bits are not part of the output, giving length-extension resistance in contrast to SHA-2. f includes 24 rounds of iterations: [an attack on SHA-3 (2019)](https://eprint.iacr.org/2019/147.pdf) found a collision on 5 rounds (out of 24); no attacks are known on full SHA3 other than the trivial birthday bound.
+SHA-3 is a sponge construction. Where the function f is a public premutation called Keccak that maps 1600-bits to 1600-bits. For SHA3-256: c = 512 bits, for SHA3-512: c = 1024 bits. For SHAKE128: c = 256 bits, for SHAKE256: c = 512 bits. The output is r first bits of the last execution of f. The c last bits are not part of the output, giving length-extension resistance in contrast to SHA-2. f includes 24 rounds of iterations: [an attack on SHA-3 (2019)](https://eprint.iacr.org/2019/147.pdf) found a collision on 5 rounds (out of 24); no attacks are known on full SHA3 other than the trivial birthday bound. SHA3 can be accelerated a bit with AVX vector instructions, and ARM-processors have accelerated hardware instructions for Keccak now.
 
 **Padding and block-size.** Padding for SHA3 is 01 &#124;&#124; 10\*1, for SHAKE is 1111 &#124;&#124; 10\*1. SHA3 blocks are larger than SHA2 (for SHA3-256 blocks are 136B).
 
@@ -114,15 +112,15 @@ The trees in accumulators can get rather big, for example:
 
 ## Performance
 
-We measure performance of various hash-functions with 256-bits outputs with short-message inputs.
-Not suprisingly, the graphs jump in steps with the block-length.
-The red line shows the performance for 512-to-256 compression for constructions suitable for Merkle hashing. Those functions that drop the padding/domain-separation to have fewer number of blocks to hash would require careful in-protocol handling at the benefit of better performance.
-
-Here are my benchmarks (or rather attempts) for Rust crates on Apple M3 Pro (2023). Not sure why SHA2 in software is slower than SHA3 in software, possibly because Rust compiler favors safety over performance.
+I measure performance of some of the hash-functions with 256-bits outputs with short-message inputs for Rust crates on my Apply M3 Pro (2023).
+The graphs jump in steps with the block-length, but since there is a lot of noise in my measurements, I took means in appropriate intervals making sure first that I indeed see the block-length jumps.
 
 ![Rust hashing benchmarks](/images/Rust_Hash_Benches.png){: style="max-width:600px; width:100%; height:auto;" }
 
-For performance in Merkle trees, we look at a specific point of these graphs for hashing 64 bytes input. Note the drastic 6x differenece depending on the choice of the function:
+<span style="color:lightgray">\* Not sure why SHA2 in software is slower than SHA3 in software, it should be the other way around. This is possibly because Rust compiler favors safety over performance for SHA2, or perhaps some of the hardware support for SHA3 still cripples in, as making things deliberately slower is not something that libraries usually have any reason to do. I should've also added SHA512/256 and SHAKE128 with 256-bits output.</span>
+
+For performance in Merkle trees, look at a specific point of these graphs for hashing 64 bytes input. Droping the padding/domain-separation would require careful in-protocol handling (to maintain collision-resistance) at the benefit of better performance.
+Note the drastic 6x differenece depending on the choice of the function and  hardware-acceleration:
 
 <table class="bordered-table">
     <tr style="border: 1px solid #cccccc; border-collapse: collapse;">
@@ -168,4 +166,4 @@ BLAKE3:  89.5889795
 SHA2-NI:  60.997104
 SHA2-NI no padding:  42.165167 -->
 
-Some applications might want to introduce security boundary between storage and execution; and check merkle proofs on every read from the database. Performance of the hash-function will then become even more important.
+Some highly-secure applications might want to have a security boundary between storage and execution; and check merkle proofs on every read from the database. Performance of the hash-function will then become even more important.
