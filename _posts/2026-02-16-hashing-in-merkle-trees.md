@@ -6,7 +6,7 @@ image: /images/Rust_Hash_Benches_Short_Inputs_NIST.png
 ---
 
 # Hashing in Merkle Trees
-<span style="color:lightgray">{{ page.date | date: "%B, %Y" }}</span>
+<span style="color:lightgray">{{ page.date | date: "%B %-d, %Y" }}</span>
 
 A hash function compresses the input into a fixed-length string. It can be used for compression itself, but might also be used to remove structure from a user's input for security purposes (e.g. when signing a message).
 
