@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post_container
 title: Hashing in Merkle Trees
 description: "Review of different hash functions: history, properties, constructions, performance."
 image: /images/Rust_Hash_Benches_Short_Inputs_NIST.png

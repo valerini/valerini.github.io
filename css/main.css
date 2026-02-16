@@ -151,7 +151,7 @@ a.paper:hover {
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 2em;
 }
 h2, .contact strong.email {
     font-size: 1.3rem;
@@ -271,7 +271,12 @@ div.content_post img {
     margin: 0 auto;      /* auto left/right margins center it */    
 }
 
-p.posts_list {
-    padding-top: 5px; 
+div.posts_list {
+    padding-bottom: 20px; 
     font-size: 1.3rem;
+}
+
+div.disclaimer {
+    color: #d0d0d0;
+    padding-top: 20px;
 }
