@@ -14,10 +14,8 @@ image: /images/blog_header.png
   }
 </style>
 
-<ul class="large-spacing">
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a> &nbsp;({{ post.date | date: "%b, %Y" }})
-    </li>
+{% for post in site.posts %}
+  <p class="posts_list">
+    <a href="{{ post.url }}">{{ post.title }}</a> &nbsp;({{ post.date | date: "%b, %Y" }})
+  </p>
   {% endfor %}
-</ul>

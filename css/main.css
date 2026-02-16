@@ -86,7 +86,7 @@ div.place {
 }
 div.entry {
     width: 100%;
-}
+}d
 
 table.education {
     width: 100%;
@@ -269,4 +269,9 @@ div.footer {
 div.content_post img {
     display: block;      /* makes it block-level */
     margin: 0 auto;      /* auto left/right margins center it */    
+}
+
+p.posts_list {
+    padding-top: 5px; 
+    font-size: 1.3rem;
 }
