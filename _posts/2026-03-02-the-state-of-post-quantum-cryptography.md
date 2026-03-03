@@ -12,9 +12,7 @@ Peter Shor's quantum algorithm (1994) efficiently (in polynomial time) breaks RS
 In a [harvest-now and decrypt-later](https://en.wikipedia.org/wiki/Harvest_now,_decrypt_later) attack,
 encrypted data can be recorded today and decrypted once a sufficiently powerful quantum computer becomes available, so quantum-resistant encryption is needed today. A weak ciphertext once intercepted can be stored by an adversary forever. For signatures, it is only important that, when the signatures are being checked, a quantum computer is not available to forge them. Therefore, transitioning to quantum-resistant signatures is less urgent than transitioning to quantum-resistant encryption, since cryptographically relevant quantum computers still appear to be several years away. Blockchains present a more nuanced case, which I discuss below. Actually, the multi-billion-dollar bounty secured by blockchains is a testament to the fact that a cryptographically relevant quantum computer has not been built yet.
 
-<div>
-<img src="/images/Classical_vs_Quantum.png" style="width:600px"/>
-</div>
+![Classical vs. Quantum computing](/images/Classical_vs_Quantum.png){: style="max-width:600px; width:100%; height:auto;" }
 
 ## How far away are quantum computers?
 
