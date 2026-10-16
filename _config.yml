@@ -1,6 +1,8 @@
 title: Valeria Nikolaenko
 markdown: kramdown
-
+kramdown:
+  math_engine: mathjax
+  
 permalink: /:year-:month-:day-:title.html
 url: "https://valerini.com"
 twitter_username: lera_banda
